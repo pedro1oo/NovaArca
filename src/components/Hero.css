@@ -7,9 +7,20 @@
   text-align: center;
   overflow: hidden;
   background:
-    radial-gradient(ellipse at 50% 80%, rgba(220, 20, 60, 0.08) 0%, transparent 60%),
-    radial-gradient(ellipse at 20% 20%, rgba(139, 58, 58, 0.06) 0%, transparent 50%),
+    radial-gradient(ellipse at 50% 80%, rgba(220, 20, 60, 0.1) 0%, transparent 60%),
+    radial-gradient(ellipse at 20% 20%, rgba(139, 58, 58, 0.08) 0%, transparent 50%),
     var(--deep-bg);
+}
+
+/* Diagonal accent lines in background */
+.hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(135deg, transparent 40%, rgba(220, 20, 60, 0.03) 40%, rgba(220, 20, 60, 0.03) 40.5%, transparent 40.5%),
+    linear-gradient(135deg, transparent 60%, rgba(220, 20, 60, 0.02) 60%, rgba(220, 20, 60, 0.02) 60.5%, transparent 60.5%);
+  pointer-events: none;
 }
 
 .hero__particles {
@@ -51,8 +62,10 @@
   color: var(--neon-red);
   margin-bottom: 2rem;
   opacity: 0.8;
+  animation: flicker 4s infinite;
 }
 
+/* Glitch title */
 .hero__title {
   font-family: 'Cinzel', serif;
   font-weight: 900;
@@ -61,6 +74,7 @@
   opacity: 0;
   transform: translateY(30px);
   transition: all 1s ease;
+  position: relative;
 }
 
 .hero__title--visible {
@@ -73,14 +87,45 @@
   font-size: clamp(4rem, 12vw, 10rem);
   color: var(--text-primary);
   text-shadow: 0 0 40px rgba(220, 20, 60, 0.15);
+  position: relative;
 }
 
 .hero__title-line--accent {
   color: var(--neon-red);
   text-shadow:
-    0 0 20px rgba(255, 34, 68, 0.4),
-    0 0 60px rgba(255, 34, 68, 0.15);
+    0 0 20px rgba(255, 34, 68, 0.5),
+    0 0 60px rgba(255, 34, 68, 0.2),
+    0 0 120px rgba(255, 34, 68, 0.1);
   -webkit-text-stroke: 1px rgba(255, 34, 68, 0.3);
+  animation: glitch-skew 6s infinite;
+}
+
+/* Glitch pseudo-layers on accent line */
+.hero__title-line--accent::before,
+.hero__title-line--accent::after {
+  content: 'ARCA';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.hero__title-line--accent::before {
+  color: var(--glitch-blue);
+  z-index: -1;
+  animation: glitch-shift 3s infinite reverse;
+  clip-path: inset(0 0 60% 0);
+  opacity: 0.5;
+}
+
+.hero__title-line--accent::after {
+  color: var(--glitch-red);
+  z-index: -1;
+  animation: glitch-shift 2.5s infinite;
+  clip-path: inset(60% 0 0 0);
+  opacity: 0.5;
 }
 
 .hero__subtitle {
@@ -104,12 +149,14 @@
   display: block;
   width: 80px;
   height: 1px;
-  background: linear-gradient(90deg, transparent, var(--crimson), transparent);
+  background: linear-gradient(90deg, transparent, var(--neon-red), transparent);
+  box-shadow: 0 0 8px rgba(255, 34, 68, 0.3);
 }
 
 .hero__divider-diamond {
-  color: var(--crimson);
+  color: var(--neon-red);
   font-size: 0.6rem;
+  filter: drop-shadow(0 0 4px rgba(255, 34, 68, 0.6));
 }
 
 .hero__tagline {
@@ -123,27 +170,44 @@
   line-height: 1.8;
 }
 
+/* CTA — cyberpunk clipped button */
 .hero__cta {
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
-  padding: 0.8rem 2rem;
+  padding: 0.8rem 2.5rem;
   font-family: 'Share Tech Mono', monospace;
   font-size: 0.8rem;
   letter-spacing: 0.2em;
   text-transform: uppercase;
   text-decoration: none;
   color: var(--neon-red);
-  border: 1px solid rgba(220, 20, 60, 0.4);
-  background: rgba(220, 20, 60, 0.05);
-  transition: all 0.4s ease;
+  border: 1px solid rgba(220, 20, 60, 0.5);
+  background: rgba(220, 20, 60, 0.08);
+  clip-path: var(--clip-angle-sm);
+  transition: all 0.3s ease;
   cursor: pointer;
+  position: relative;
+}
+
+.hero__cta::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(255, 34, 68, 0.15), transparent);
+  opacity: 0;
+  transition: opacity 0.3s;
 }
 
 .hero__cta:hover {
-  background: rgba(220, 20, 60, 0.15);
+  background: rgba(220, 20, 60, 0.2);
   border-color: var(--neon-red);
-  box-shadow: 0 0 30px rgba(255, 34, 68, 0.2), inset 0 0 30px rgba(255, 34, 68, 0.05);
+  box-shadow: 0 0 30px rgba(255, 34, 68, 0.3), inset 0 0 30px rgba(255, 34, 68, 0.05);
+  text-shadow: 0 0 10px rgba(255, 34, 68, 0.5);
+}
+
+.hero__cta:hover::before {
+  opacity: 1;
 }
 
 .hero__cta-arrow {

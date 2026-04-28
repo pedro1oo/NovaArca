@@ -5,7 +5,6 @@
   margin: 0 auto;
 }
 
-/* nav */
 .chapters-page__nav {
   padding: 1.5rem 0;
 }
@@ -25,9 +24,9 @@
 
 .chapters-page__back:hover {
   color: var(--neon-red);
+  text-shadow: 0 0 8px rgba(255, 34, 68, 0.3);
 }
 
-/* header */
 .chapters-page__header {
   text-align: center;
   padding: 3rem 0 4rem;
@@ -39,6 +38,7 @@
   letter-spacing: 0.5em;
   color: var(--neon-red);
   opacity: 0.6;
+  animation: flicker 4s infinite;
 }
 
 .chapters-page__title {
@@ -47,7 +47,7 @@
   font-size: clamp(2.5rem, 6vw, 4rem);
   color: var(--text-primary);
   margin: 0.5rem 0;
-  text-shadow: 0 0 40px rgba(220, 20, 60, 0.1);
+  text-shadow: 0 0 40px rgba(220, 20, 60, 0.12);
 }
 
 .chapters-page__subtitle {
@@ -69,16 +69,18 @@
 .chapters-page__divider-line {
   display: block;
   width: 60px;
-  height: 1px;
-  background: linear-gradient(90deg, transparent, var(--crimson), transparent);
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--neon-red), transparent);
+  box-shadow: 0 0 8px rgba(255, 34, 68, 0.3);
 }
 
 .chapters-page__divider-diamond {
-  color: var(--crimson);
+  color: var(--neon-red);
   font-size: 0.5rem;
+  filter: drop-shadow(0 0 4px rgba(255, 34, 68, 0.5));
 }
 
-/* chapter cards */
+/* chapter cards — cyberpunk clipped */
 .chapters-page__list {
   display: flex;
   flex-direction: column;
@@ -91,19 +93,21 @@
   align-items: center;
   gap: 1.5rem;
   padding: 1.8rem 2rem;
-  background: rgba(10, 10, 15, 0.7);
-  border: 1px solid rgba(220, 20, 60, 0.08);
+  background: var(--panel-bg);
+  border: 1px solid var(--border-cyber);
   text-decoration: none;
   color: inherit;
   overflow: hidden;
-  transition: border-color 0.4s, background 0.4s, transform 0.3s;
+  transition: border-color 0.4s, background 0.4s, transform 0.3s, box-shadow 0.4s;
   cursor: pointer;
+  clip-path: var(--clip-angle-sm);
 }
 
 .chapter-card:hover {
-  border-color: rgba(220, 20, 60, 0.35);
-  background: rgba(220, 20, 60, 0.03);
+  border-color: rgba(220, 20, 60, 0.5);
+  background: rgba(220, 20, 60, 0.05);
   transform: translateX(4px);
+  box-shadow: 0 0 25px rgba(220, 20, 60, 0.08);
 }
 
 .chapter-card__border-glow {
@@ -112,14 +116,14 @@
   top: 0;
   bottom: 0;
   width: 3px;
-  background: var(--crimson);
+  background: var(--neon-red);
   opacity: 0;
   transition: opacity 0.4s;
+  box-shadow: 0 0 12px rgba(255, 34, 68, 0.5);
 }
 
 .chapter-card:hover .chapter-card__border-glow {
   opacity: 1;
-  box-shadow: 0 0 15px rgba(220, 20, 60, 0.4);
 }
 
 .chapter-card__number-col {
@@ -132,11 +136,12 @@
   font-size: 2.2rem;
   color: rgba(220, 20, 60, 0.15);
   line-height: 1;
-  transition: color 0.4s;
+  transition: color 0.4s, text-shadow 0.4s;
 }
 
 .chapter-card:hover .chapter-card__number {
-  color: rgba(220, 20, 60, 0.4);
+  color: rgba(220, 20, 60, 0.5);
+  text-shadow: 0 0 15px rgba(255, 34, 68, 0.3);
 }
 
 .chapter-card__number--dim {
@@ -164,7 +169,7 @@
   font-size: clamp(1rem, 2.5vw, 1.3rem);
   color: var(--text-primary);
   margin-bottom: 0.3rem;
-  transition: color 0.3s;
+  transition: color 0.3s, text-shadow 0.3s;
 }
 
 .chapter-card:hover .chapter-card__title {
@@ -188,28 +193,29 @@
 .chapter-card__arrow {
   flex-shrink: 0;
   font-size: 1.2rem;
-  color: var(--crimson);
+  color: var(--neon-red);
   opacity: 0;
   transform: translateX(-8px);
   transition: opacity 0.3s, transform 0.3s;
 }
 
 .chapter-card:hover .chapter-card__arrow {
-  opacity: 0.7;
+  opacity: 0.8;
   transform: translateX(0);
 }
 
 /* locked card */
 .chapter-card--locked {
   cursor: default;
-  opacity: 0.4;
+  opacity: 0.35;
   border-style: dashed;
 }
 
 .chapter-card--locked:hover {
   transform: none;
-  border-color: rgba(220, 20, 60, 0.08);
-  background: rgba(10, 10, 15, 0.7);
+  border-color: var(--border-cyber);
+  background: var(--panel-bg);
+  box-shadow: none;
 }
 
 .chapter-card__lock {
@@ -240,7 +246,7 @@
   width: 5px;
   height: 5px;
   background: var(--neon-red);
-  border-radius: 50%;
+  box-shadow: 0 0 8px rgba(255, 34, 68, 0.5);
   animation: blink 2s infinite;
 }
 

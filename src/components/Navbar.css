@@ -13,10 +13,11 @@
 }
 
 .navbar--scrolled {
-  background: rgba(5, 5, 8, 0.95);
-  backdrop-filter: blur(10px);
-  border-bottom: 1px solid rgba(220, 20, 60, 0.2);
+  background: rgba(5, 5, 8, 0.92);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--border-cyber);
   padding: 0.6rem 2rem;
+  box-shadow: 0 2px 20px rgba(220, 20, 60, 0.08);
 }
 
 .navbar__logo {
@@ -39,6 +40,7 @@
   font-size: 1.1rem;
   letter-spacing: 0.3em;
   text-transform: uppercase;
+  text-shadow: 0 0 15px rgba(255, 34, 68, 0.15);
 }
 
 .navbar__links {
@@ -64,8 +66,9 @@
   bottom: -4px;
   left: 0;
   width: 0;
-  height: 1px;
+  height: 2px;
   background: var(--neon-red);
+  box-shadow: 0 0 8px rgba(255, 34, 68, 0.5);
   transition: width 0.3s;
 }
 
@@ -134,7 +137,7 @@
   }
 }
 
-/* CTA button */
+/* CTA button — cyberpunk clipped */
 .navbar__cta {
   display: inline-block;
   text-decoration: none;
@@ -143,16 +146,17 @@
   letter-spacing: 0.15em;
   text-transform: uppercase;
   color: var(--neon-red);
-  padding: 0.4rem 1rem;
-  border: 1px solid rgba(220, 20, 60, 0.35);
-  background: rgba(220, 20, 60, 0.05);
+  padding: 0.4rem 1.2rem;
+  border: 1px solid rgba(220, 20, 60, 0.45);
+  background: rgba(220, 20, 60, 0.08);
+  clip-path: var(--clip-angle-sm);
   transition: all 0.3s;
 }
 
 .navbar__cta:hover {
-  background: rgba(220, 20, 60, 0.15);
+  background: rgba(220, 20, 60, 0.2);
   border-color: var(--neon-red);
-  box-shadow: 0 0 15px rgba(255, 34, 68, 0.2);
+  box-shadow: 0 0 20px rgba(255, 34, 68, 0.25);
   color: var(--neon-red);
   text-shadow: 0 0 10px rgba(255, 34, 68, 0.4);
 }

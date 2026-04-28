@@ -11,6 +11,13 @@
   --text-glow: #ff4466;
   --cyan-dim: #1a3a4a;
   --neon-cyan: #00e5ff;
+  --neon-yellow: #fcee09;
+  --glitch-blue: #00d4ff;
+  --glitch-red: #ff0040;
+  --panel-bg: rgba(10, 10, 15, 0.85);
+  --border-cyber: rgba(220, 20, 60, 0.25);
+  --clip-angle: polygon(0 0, calc(100% - 16px) 0, 100% 16px, 100% 100%, 16px 100%, 0 calc(100% - 16px));
+  --clip-angle-sm: polygon(0 0, calc(100% - 10px) 0, 100% 10px, 100% 100%, 10px 100%, 0 calc(100% - 10px));
 }
 
 *, *::before, *::after {
@@ -22,7 +29,7 @@
 html {
   scroll-behavior: smooth;
   scrollbar-width: thin;
-  scrollbar-color: var(--crimson) var(--dark-steel);
+  scrollbar-color: var(--neon-red) var(--dark-steel);
 }
 
 body {
@@ -40,11 +47,56 @@ body {
   background: var(--dark-steel);
 }
 ::-webkit-scrollbar-thumb {
-  background: var(--crimson);
-  border-radius: 3px;
+  background: var(--neon-red);
+  border-radius: 0;
 }
 
 ::selection {
-  background: var(--crimson);
+  background: var(--neon-red);
   color: var(--deep-bg);
+}
+
+/* Utility: cyberpunk clipped corners */
+.cyber-clip {
+  clip-path: var(--clip-angle);
+}
+
+/* Glitch keyframes — global */
+@keyframes glitch-skew {
+  0% { transform: skew(0deg); }
+  20% { transform: skew(-2deg); }
+  40% { transform: skew(0.5deg); }
+  60% { transform: skew(-0.3deg); }
+  80% { transform: skew(1deg); }
+  100% { transform: skew(0deg); }
+}
+
+@keyframes glitch-shift {
+  0%, 100% { transform: translate(0); }
+  20% { transform: translate(-2px, 1px); }
+  40% { transform: translate(2px, -1px); }
+  60% { transform: translate(-1px, 2px); }
+  80% { transform: translate(1px, -2px); }
+}
+
+@keyframes flicker {
+  0%, 100% { opacity: 1; }
+  41% { opacity: 1; }
+  42% { opacity: 0.8; }
+  43% { opacity: 1; }
+  45% { opacity: 0.3; }
+  46% { opacity: 1; }
+  50% { opacity: 1; }
+  51% { opacity: 0.6; }
+  52% { opacity: 1; }
+}
+
+@keyframes data-stream {
+  0% { background-position: 0 0; }
+  100% { background-position: 0 -200px; }
+}
+
+@keyframes scan-line {
+  0% { top: -10%; }
+  100% { top: 110%; }
 }

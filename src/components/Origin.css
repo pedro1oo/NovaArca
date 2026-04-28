@@ -13,21 +13,22 @@
 .origin__card {
   position: relative;
   padding: 2.5rem;
-  background: rgba(10, 10, 15, 0.8);
-  border: 1px solid rgba(220, 20, 60, 0.1);
-  border-radius: 2px;
+  background: var(--panel-bg);
+  border: 1px solid var(--border-cyber);
+  clip-path: var(--clip-angle);
   overflow: hidden;
-  transition: border-color 0.4s, transform 0.3s;
+  transition: border-color 0.4s, transform 0.3s, box-shadow 0.4s;
 }
 
 .origin__card:hover {
-  border-color: rgba(220, 20, 60, 0.3);
+  border-color: rgba(220, 20, 60, 0.5);
   transform: translateY(-2px);
+  box-shadow: 0 4px 30px rgba(220, 20, 60, 0.1);
 }
 
 .origin__card--main {
-  border-color: rgba(220, 20, 60, 0.25);
-  background: linear-gradient(135deg, rgba(220, 20, 60, 0.04), rgba(10, 10, 15, 0.9));
+  border-color: rgba(220, 20, 60, 0.35);
+  background: linear-gradient(135deg, rgba(220, 20, 60, 0.06), rgba(10, 10, 15, 0.9));
 }
 
 .origin__card-glow {
@@ -36,7 +37,7 @@
   right: -50%;
   width: 200%;
   height: 200%;
-  background: radial-gradient(circle, rgba(220, 20, 60, 0.03) 0%, transparent 60%);
+  background: radial-gradient(circle, rgba(220, 20, 60, 0.04) 0%, transparent 60%);
   pointer-events: none;
 }
 
@@ -46,6 +47,7 @@
   color: var(--neon-red);
   letter-spacing: 0.3em;
   margin-bottom: 1rem;
+  text-shadow: 0 0 8px rgba(255, 34, 68, 0.3);
 }
 
 .origin__card-icon {
@@ -72,6 +74,7 @@
 .origin__highlight {
   color: var(--neon-red);
   font-weight: 500;
+  text-shadow: 0 0 6px rgba(255, 34, 68, 0.2);
 }
 
 .origin__timeline {
@@ -85,20 +88,20 @@
   top: 50%;
   left: 10%;
   right: 10%;
-  height: 1px;
-  background: linear-gradient(90deg, transparent, var(--crimson), var(--crimson), transparent);
-  opacity: 0.3;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--neon-red), var(--neon-red), transparent);
+  opacity: 0.4;
+  box-shadow: 0 0 10px rgba(255, 34, 68, 0.3);
 }
 
 .origin__timeline-dot {
   position: absolute;
   top: 50%;
-  width: 8px;
-  height: 8px;
-  background: var(--crimson);
-  border-radius: 50%;
-  transform: translate(-50%, -50%);
-  box-shadow: 0 0 10px rgba(220, 20, 60, 0.5);
+  width: 10px;
+  height: 10px;
+  background: var(--neon-red);
+  transform: translate(-50%, -50%) rotate(45deg);
+  box-shadow: 0 0 12px rgba(255, 34, 68, 0.6);
 }
 
 .origin__timeline-dot--1 { left: 20%; }

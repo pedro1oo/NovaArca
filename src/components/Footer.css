@@ -8,10 +8,12 @@
 .footer__border {
   position: absolute;
   top: 0;
-  left: 10%;
-  right: 10%;
-  height: 1px;
-  background: linear-gradient(90deg, transparent, rgba(220, 20, 60, 0.2), transparent);
+  left: 5%;
+  right: 5%;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--neon-red), transparent);
+  opacity: 0.3;
+  box-shadow: 0 0 15px rgba(255, 34, 68, 0.2);
 }
 
 .footer__content {
@@ -30,7 +32,7 @@
 .footer__symbol {
   font-size: 1.2rem;
   color: var(--neon-red);
-  filter: drop-shadow(0 0 6px rgba(255, 34, 68, 0.5));
+  filter: drop-shadow(0 0 8px rgba(255, 34, 68, 0.6));
 }
 
 .footer__name {
@@ -39,6 +41,7 @@
   font-size: 1rem;
   letter-spacing: 0.3em;
   color: var(--text-primary);
+  text-shadow: 0 0 15px rgba(255, 34, 68, 0.1);
 }
 
 .footer__era {
@@ -58,10 +61,12 @@
 }
 
 .footer__line {
-  width: 40px;
-  height: 1px;
-  background: rgba(220, 20, 60, 0.3);
+  width: 50px;
+  height: 2px;
+  background: var(--neon-red);
   margin: 1.5rem auto;
+  opacity: 0.4;
+  box-shadow: 0 0 8px rgba(255, 34, 68, 0.3);
 }
 
 .footer__status {
@@ -80,7 +85,7 @@
   width: 5px;
   height: 5px;
   background: var(--neon-red);
-  border-radius: 50%;
+  box-shadow: 0 0 8px rgba(255, 34, 68, 0.6);
   animation: blink 2s infinite;
 }
 
