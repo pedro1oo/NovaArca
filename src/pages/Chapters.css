@@ -1,0 +1,265 @@
+.chapters-page {
+  min-height: 100vh;
+  padding: 0 2rem 4rem;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+/* nav */
+.chapters-page__nav {
+  padding: 1.5rem 0;
+}
+
+.chapters-page__back {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  text-decoration: none;
+  font-family: 'Share Tech Mono', monospace;
+  font-size: 0.75rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--text-dim);
+  transition: color 0.3s;
+}
+
+.chapters-page__back:hover {
+  color: var(--neon-red);
+}
+
+/* header */
+.chapters-page__header {
+  text-align: center;
+  padding: 3rem 0 4rem;
+}
+
+.chapters-page__label {
+  font-family: 'Share Tech Mono', monospace;
+  font-size: 0.65rem;
+  letter-spacing: 0.5em;
+  color: var(--neon-red);
+  opacity: 0.6;
+}
+
+.chapters-page__title {
+  font-family: 'Cinzel', serif;
+  font-weight: 900;
+  font-size: clamp(2.5rem, 6vw, 4rem);
+  color: var(--text-primary);
+  margin: 0.5rem 0;
+  text-shadow: 0 0 40px rgba(220, 20, 60, 0.1);
+}
+
+.chapters-page__subtitle {
+  font-weight: 300;
+  color: var(--text-dim);
+  font-size: 0.95rem;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.chapters-page__divider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.chapters-page__divider-line {
+  display: block;
+  width: 60px;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--crimson), transparent);
+}
+
+.chapters-page__divider-diamond {
+  color: var(--crimson);
+  font-size: 0.5rem;
+}
+
+/* chapter cards */
+.chapters-page__list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.chapter-card {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  padding: 1.8rem 2rem;
+  background: rgba(10, 10, 15, 0.7);
+  border: 1px solid rgba(220, 20, 60, 0.08);
+  text-decoration: none;
+  color: inherit;
+  overflow: hidden;
+  transition: border-color 0.4s, background 0.4s, transform 0.3s;
+  cursor: pointer;
+}
+
+.chapter-card:hover {
+  border-color: rgba(220, 20, 60, 0.35);
+  background: rgba(220, 20, 60, 0.03);
+  transform: translateX(4px);
+}
+
+.chapter-card__border-glow {
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 3px;
+  background: var(--crimson);
+  opacity: 0;
+  transition: opacity 0.4s;
+}
+
+.chapter-card:hover .chapter-card__border-glow {
+  opacity: 1;
+  box-shadow: 0 0 15px rgba(220, 20, 60, 0.4);
+}
+
+.chapter-card__number-col {
+  flex-shrink: 0;
+}
+
+.chapter-card__number {
+  font-family: 'Cinzel', serif;
+  font-weight: 900;
+  font-size: 2.2rem;
+  color: rgba(220, 20, 60, 0.15);
+  line-height: 1;
+  transition: color 0.4s;
+}
+
+.chapter-card:hover .chapter-card__number {
+  color: rgba(220, 20, 60, 0.4);
+}
+
+.chapter-card__number--dim {
+  color: rgba(255, 255, 255, 0.04);
+}
+
+.chapter-card__content {
+  flex: 1;
+  min-width: 0;
+}
+
+.chapter-card__location {
+  font-family: 'Share Tech Mono', monospace;
+  font-size: 0.65rem;
+  letter-spacing: 0.2em;
+  color: var(--text-dim);
+  opacity: 0.6;
+  display: block;
+  margin-bottom: 0.3rem;
+}
+
+.chapter-card__title {
+  font-family: 'Cinzel', serif;
+  font-weight: 700;
+  font-size: clamp(1rem, 2.5vw, 1.3rem);
+  color: var(--text-primary);
+  margin-bottom: 0.3rem;
+  transition: color 0.3s;
+}
+
+.chapter-card:hover .chapter-card__title {
+  color: var(--neon-red);
+  text-shadow: 0 0 20px rgba(255, 34, 68, 0.2);
+}
+
+.chapter-card__title--dim {
+  color: rgba(255, 255, 255, 0.08);
+  letter-spacing: 0.1em;
+}
+
+.chapter-card__chrono {
+  font-family: 'Share Tech Mono', monospace;
+  font-size: 0.65rem;
+  letter-spacing: 0.15em;
+  color: var(--gold-dim);
+  opacity: 0.5;
+}
+
+.chapter-card__arrow {
+  flex-shrink: 0;
+  font-size: 1.2rem;
+  color: var(--crimson);
+  opacity: 0;
+  transform: translateX(-8px);
+  transition: opacity 0.3s, transform 0.3s;
+}
+
+.chapter-card:hover .chapter-card__arrow {
+  opacity: 0.7;
+  transform: translateX(0);
+}
+
+/* locked card */
+.chapter-card--locked {
+  cursor: default;
+  opacity: 0.4;
+  border-style: dashed;
+}
+
+.chapter-card--locked:hover {
+  transform: none;
+  border-color: rgba(220, 20, 60, 0.08);
+  background: rgba(10, 10, 15, 0.7);
+}
+
+.chapter-card__lock {
+  flex-shrink: 0;
+  font-size: 1.2rem;
+  color: var(--text-dim);
+  opacity: 0.3;
+}
+
+/* footer */
+.chapters-page__footer {
+  text-align: center;
+  padding: 3rem 0 1rem;
+}
+
+.chapters-page__signal {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: 'Share Tech Mono', monospace;
+  font-size: 0.6rem;
+  letter-spacing: 0.3em;
+  color: var(--neon-red);
+  opacity: 0.3;
+}
+
+.chapters-page__dot {
+  width: 5px;
+  height: 5px;
+  background: var(--neon-red);
+  border-radius: 50%;
+  animation: blink 2s infinite;
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.2; }
+}
+
+@media (max-width: 768px) {
+  .chapters-page {
+    padding: 0 1.2rem 3rem;
+  }
+
+  .chapter-card {
+    padding: 1.2rem 1rem;
+    gap: 1rem;
+  }
+
+  .chapter-card__number {
+    font-size: 1.6rem;
+  }
+}

@@ -1,0 +1,90 @@
+.footer {
+  position: relative;
+  padding: 4rem 2rem;
+  text-align: center;
+  background: rgba(5, 5, 8, 0.95);
+}
+
+.footer__border {
+  position: absolute;
+  top: 0;
+  left: 10%;
+  right: 10%;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(220, 20, 60, 0.2), transparent);
+}
+
+.footer__content {
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.footer__logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  margin-bottom: 0.5rem;
+}
+
+.footer__symbol {
+  font-size: 1.2rem;
+  color: var(--neon-red);
+  filter: drop-shadow(0 0 6px rgba(255, 34, 68, 0.5));
+}
+
+.footer__name {
+  font-family: 'Cinzel', serif;
+  font-weight: 900;
+  font-size: 1rem;
+  letter-spacing: 0.3em;
+  color: var(--text-primary);
+}
+
+.footer__era {
+  font-family: 'Share Tech Mono', monospace;
+  font-size: 0.65rem;
+  letter-spacing: 0.3em;
+  color: var(--text-dim);
+  margin-bottom: 1rem;
+}
+
+.footer__copy {
+  font-weight: 300;
+  font-size: 0.85rem;
+  color: var(--text-dim);
+  line-height: 1.6;
+  opacity: 0.6;
+}
+
+.footer__line {
+  width: 40px;
+  height: 1px;
+  background: rgba(220, 20, 60, 0.3);
+  margin: 1.5rem auto;
+}
+
+.footer__status {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  font-family: 'Share Tech Mono', monospace;
+  font-size: 0.6rem;
+  letter-spacing: 0.3em;
+  color: var(--neon-red);
+  opacity: 0.4;
+}
+
+.footer__dot {
+  width: 5px;
+  height: 5px;
+  background: var(--neon-red);
+  border-radius: 50%;
+  animation: blink 2s infinite;
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.2; }
+}

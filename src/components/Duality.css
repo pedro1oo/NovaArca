@@ -1,0 +1,169 @@
+.duality__intro {
+  text-align: center;
+  max-width: 700px;
+  margin: 0 auto 3rem;
+  font-weight: 300;
+  color: var(--text-dim);
+  line-height: 1.8;
+  font-size: 1rem;
+}
+
+.duality__split {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.duality__side {
+  position: relative;
+  flex: 1;
+  padding: 2.5rem;
+  overflow: hidden;
+}
+
+.duality__side--light {
+  background: linear-gradient(135deg, rgba(0, 229, 255, 0.03), rgba(10, 10, 15, 0.8));
+  border: 1px solid rgba(0, 229, 255, 0.12);
+}
+
+.duality__side--dark {
+  background: linear-gradient(135deg, rgba(220, 20, 60, 0.04), rgba(10, 10, 15, 0.8));
+  border: 1px solid rgba(220, 20, 60, 0.12);
+}
+
+.duality__side-glow {
+  position: absolute;
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  filter: blur(80px);
+  pointer-events: none;
+}
+
+.duality__side-glow--light {
+  top: -50px;
+  right: -50px;
+  background: rgba(0, 229, 255, 0.06);
+}
+
+.duality__side-glow--dark {
+  bottom: -50px;
+  left: -50px;
+  background: rgba(220, 20, 60, 0.06);
+}
+
+.duality__label {
+  font-family: 'Share Tech Mono', monospace;
+  font-size: 0.65rem;
+  letter-spacing: 0.5em;
+  color: var(--neon-cyan);
+  opacity: 0.7;
+}
+
+.duality__label--dark {
+  color: var(--neon-red);
+}
+
+.duality__side-title {
+  font-family: 'Cinzel', serif;
+  font-size: 1.4rem;
+  color: var(--text-primary);
+  margin: 0.5rem 0 1.5rem;
+}
+
+.duality__list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
+.duality__list li {
+  font-weight: 300;
+  color: var(--text-dim);
+  font-size: 0.95rem;
+  display: flex;
+  align-items: flex-start;
+  gap: 0.6rem;
+}
+
+.duality__bullet {
+  flex-shrink: 0;
+  font-size: 0.6rem;
+  margin-top: 0.35rem;
+}
+
+.duality__bullet--light { color: var(--neon-cyan); }
+.duality__bullet--dark { color: var(--neon-red); }
+
+.duality__hologram,
+.duality__static {
+  margin-top: 1.5rem;
+  display: flex;
+  gap: 0.8rem;
+  flex-wrap: wrap;
+}
+
+.duality__hologram span {
+  font-family: 'Share Tech Mono', monospace;
+  font-size: 0.6rem;
+  letter-spacing: 0.2em;
+  padding: 0.3rem 0.8rem;
+  border: 1px solid rgba(0, 229, 255, 0.2);
+  color: var(--neon-cyan);
+  opacity: 0.5;
+}
+
+.duality__static span {
+  font-family: 'Share Tech Mono', monospace;
+  font-size: 0.6rem;
+  letter-spacing: 0.2em;
+  padding: 0.3rem 0.8rem;
+  border: 1px solid rgba(220, 20, 60, 0.2);
+  color: var(--neon-red);
+  opacity: 0.5;
+  text-decoration: line-through;
+}
+
+.duality__center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  padding: 0.5rem 0;
+}
+
+.duality__center-line {
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(220, 20, 60, 0.3), transparent);
+}
+
+.duality__center-vs {
+  font-family: 'Cinzel', serif;
+  font-weight: 900;
+  font-size: 0.8rem;
+  color: var(--crimson);
+  letter-spacing: 0.3em;
+}
+
+@media (min-width: 768px) {
+  .duality__split {
+    flex-direction: row;
+    gap: 0;
+  }
+
+  .duality__center {
+    flex-direction: column;
+    padding: 0 1rem;
+  }
+
+  .duality__center-line {
+    width: 1px;
+    height: auto;
+    flex: 1;
+    background: linear-gradient(180deg, transparent, rgba(220, 20, 60, 0.3), transparent);
+  }
+}

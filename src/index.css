@@ -1,0 +1,50 @@
+:root {
+  --crimson: #dc143c;
+  --neon-red: #ff2244;
+  --dark-steel: #0a0a0f;
+  --deep-bg: #050508;
+  --rust: #8b3a3a;
+  --gold-dim: #b8860b;
+  --gold-bright: #daa520;
+  --text-primary: #e0d8c8;
+  --text-dim: #7a7568;
+  --text-glow: #ff4466;
+  --cyan-dim: #1a3a4a;
+  --neon-cyan: #00e5ff;
+}
+
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  scrollbar-width: thin;
+  scrollbar-color: var(--crimson) var(--dark-steel);
+}
+
+body {
+  font-family: 'Rajdhani', sans-serif;
+  background-color: var(--deep-bg);
+  color: var(--text-primary);
+  overflow-x: hidden;
+  line-height: 1.6;
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: var(--dark-steel);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--crimson);
+  border-radius: 3px;
+}
+
+::selection {
+  background: var(--crimson);
+  color: var(--deep-bg);
+}
